@@ -9,10 +9,9 @@ function register(e) {
     var username = document.getElementById('username').value;
     var password1 = document.getElementById('password1').value;
     var password2 = document.getElementById('password2').value;
-    var approve = document.getElementById('approve').value;
 	var msg = document.getElementById('msg');
 
-    if(firstname === '' || lastname === '' || areacode === '' || telnum === '' || emailid === '' || username === '' || password1 === '' || password2 === '' || approve === ''){
+    if(firstname === '' || lastname === '' || areacode === '' || telnum === '' || emailid === '' || username === '' || password1 === '' || password2 === '' ){
 		msg.className = "alert alert-danger";
 		msg.innerHTML = "Please fill out all feilds!";
 	} else {
