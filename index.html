@@ -53,7 +53,7 @@
            <h3 class="text-center">Registration form</h3>
         </div>
          <div class="col-12 col-md-9">
-             <form>
+             <form id="myForm">
                  <div class="form-group row">
                      <label for="firstname" class="col-md-2 col-form-label">First Name</label>
                      <div class="col-md-10">
@@ -81,6 +81,27 @@
                          <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email">
                      </div>
                  </div>
+
+                 <div class="form-group row">
+                    <label for="emailid" class="col-md-2 col-form-label">Username</label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control" id="username" name="emailid" placeholder="Username">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="emailid" class="col-md-2 col-form-label">Password</label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control" id="password1" name="emailid" placeholder="Password">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="emailid" class="col-md-2 col-form-label">Confirm Password</label>
+                    <div class="col-md-10">
+                        <input type="email" class="form-control" id="password2" name="emailid" placeholder="Confirm Password">
+                    </div>
+                </div>
                  <div class="form-group row">
                      <div class="col-md-6 offset-md-2">
                          <div class="form-check">
@@ -103,7 +124,67 @@
                      </div>
                  </div>
 
-                   
+                     <div class="modal fade" role="dialog" id="paypalCheck">
+                         <div class="modal-dailog modal-lg" role="content">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h3 class="text-center">Add payment Method</h3>
+                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                 </div><!--paypalmodal header-->
+                                 <div class="modal-body">
+                                    <div id="smart-button-container">
+                                        <div style="text-align: center;">
+                                          <div id="paypal-button-container"></div>
+                                        </div>
+                                      </div>
+                                    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+                                    <script>
+                                      function initPayPalButton() {
+                                        paypal.Buttons({
+                                          style: {
+                                            shape: 'rect',
+                                            color: 'gold',
+                                            layout: 'vertical',
+                                            label: 'paypal',
+                                            
+                                          },
+                                  
+                                          createOrder: function(data, actions) {
+                                            return actions.order.create({
+                                              purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+                                            });
+                                          },
+                                  
+                                          onApprove: function(data, actions) {
+                                            return actions.order.capture().then(function(orderData) {
+                                              
+                                              // Full available details
+                                              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                  
+                                              // Show a success message within this page, e.g.
+                                              const element = document.getElementById('paypal-button-container');
+                                              element.innerHTML = '';
+                                              element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                  
+                                              // Or go to another URL:  actions.redirect('thank_you.html');
+                                              
+                                            });
+                                          },
+                                  
+                                          onError: function(err) {
+                                            console.log(err);
+                                          }
+                                        }).render('#paypal-button-container');
+                                      }
+                                      initPayPalButton();
+                                    </script>
+                                 </div><!--paypalmodal body-->
+                                 <div class="modal-footer">
+                                    <a id="closemodal" href="#myForm" class="btn btn-primary" target="_blank">close</a>
+                                  </div>
+                             </div><!--paypalmodal content-->
+                         </div><!--paypalmodal dialoh-->
+                     </div><!--paypalmodal-->
                  </div><!--Form vontainer-->
              </form>
          </div>
@@ -147,5 +228,6 @@
     <script src="jquery/dist/jquery.slim.min.js"></script>
     <script src="popper.js/dist/umd/popper.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/dist/js/script.js"></script>
 </body>
 </html>
