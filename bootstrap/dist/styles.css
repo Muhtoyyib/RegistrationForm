@@ -1,0 +1,119 @@
+body{
+    background: #D5E6FF;
+    opacity: 1;
+}
+
+.jumbotron{
+    background: transparent linear-gradient(180deg, #D5E6FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+opacity: 1;
+}
+
+.navbar-brand{
+    color: black;
+    font-weight: 500;
+}
+
+#header-image{
+    position: absolute;
+    top: 0px;
+    left: 271px;
+    width: 525px;
+    height: 191px;    
+}
+
+.vl{
+    border-left: 1px solid black;
+    height: 30px;
+    margin-top: 7px;
+    opacity: 0.5;
+}
+
+
+#headerBtn{
+    border-radius: 50px;
+    width: 130px;
+    margin-left: 10px;
+    background-color: #0d3b7e;
+}
+
+.footer{
+    background: #0C1726 0% 0% no-repeat padding-box;
+    opacity: 1;
+    margin-top: 100px;
+}
+
+h5{
+    color: white;
+    font-family:'Libre Baskerville', serif;
+    text-align: center;
+}
+
+#p{
+    margin-top: -30px;
+    text-align: center;
+    font: normal normal normal DM Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.6;
+}
+
+
+.footerlink{
+    margin-left: 5px;
+    color: white;
+}
+
+hr{
+    border: 1px solid white;
+    opacity: 0.1;
+}
+
+#footerparagraph{
+    text-align: center;
+    color: white;
+}
+
+@media/* (min-width: 600px) and */ (max-width: 479px) {
+    #header-image{
+        position: absolute;
+        top: 0px;
+        left: -30px;
+        width: 15px;
+        height: 21px;    
+    }
+
+    #footerh5{
+        font-size: 16px;
+    }
+} /* x-small devices */
+
+
+@media (min-width: 480px) and (max-width: 599px) {
+    #header-image{
+        position: absolute;
+        top: 0px;
+        left: 150px;
+        width: 55px;
+        height: 91px;    
+    }
+} /* small devices */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #header-image{
+        position: absolute;
+        top: 0px;
+        left: -30px;
+        width: 25px;
+        height: 21px;    
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #header-image{
+        position: absolute;
+        top: 0px;
+        left: -30px;
+        width: 25px;
+        height: 21px;    
+    }
+}
