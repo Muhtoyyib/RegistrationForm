@@ -12,7 +12,7 @@ function register(e) {
     var approve = document.getElementById('approve').value;
 	var msg = document.getElementById('msg');
 
-    if(firstname === '' || lastname === '' || areacode === '' || telnum === '' || emailid === '' || username === '' || password1 === '' || password2 === '' || approve === '' || file === ''){
+    if(firstname === '' || lastname === '' || areacode === '' || telnum === '' || emailid === '' || username === '' || password1 === '' || password2 === '' || approve === ''){
 		msg.className = "alert alert-danger";
 		msg.innerHTML = "Please fill out all feilds!";
 	} else {
