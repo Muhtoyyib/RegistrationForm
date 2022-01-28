@@ -33,6 +33,6 @@ function register(e) {
 		}
 		
 	}
-};
+}
 
 document.getElementById('myForm').addEventListener('submit', register, false);
