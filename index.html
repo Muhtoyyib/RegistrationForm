@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap/dist/styles.css">
+    <script>
+        function myHideFunction() {
+   var x = document.getElementById("paypalCheck");
+   if (x.style.display === "none") {
+     x.style.display = "block";
+   } else {
+     x.style.display = "none";
+   }
+ }
+     </script>
     <title>Registration</title>
 </head>
 <body>
@@ -120,7 +130,7 @@
                              <div class="modal-content">
                                  <div class="modal-header">
                                      <h3 class="text-center">Add payment Method</h3>
-                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                     <button type="button" class="close" data-dismiss="modal" onclick="myHideFunction()">&times;</button>
                                  </div><!--paypalmodal header-->
                                  <div class="modal-body">
                                     <div id="smart-button-container">
@@ -214,16 +224,7 @@
     
 
 
-    <script>
-       function myHideFunction() {
-  var x = document.getElementById("paypalCheck");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-    </script>
+   
     <script src="jquery/dist/jquery.slim.min.js"></script>
     <script src="popper.js/dist/umd/popper.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
