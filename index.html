@@ -14,7 +14,7 @@
     <header class="jumbotron jumbotron-fluid">
         <div class="container container-fluid">
             <img src="images/img5.png" id="header-image">
-            <nav class="navbar navbar-expand-sm">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                 
                     <a class="navbar-brand" href="#">
                         <span class="fa fa-comment"></span> HIPAATEXTS.COM
@@ -113,12 +113,14 @@
 
                  <button type="submit" class="btn btn-success">Submit</button>
 
+                 <div class="container">
+
                      <div class="modal fade" role="dialog" id="paypalCheck">
                          <div class="modal-dailog modal-lg" role="content">
                              <div class="modal-content">
                                  <div class="modal-header">
                                      <h3 class="text-center">Add payment Method</h3>
-                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                  </div><!--paypalmodal header-->
                                  <div class="modal-body">
                                     <div id="smart-button-container">
@@ -169,11 +171,12 @@
                                     </script>
                                  </div><!--paypalmodal body-->
                                  <div class="modal-footer">
-                                    <a id="closemodal" href="#myForm" class="btn btn-primary" target="_blank">close</a>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="myHideFunction()">Close</button>
                                   </div>
                              </div><!--paypalmodal content-->
                          </div><!--paypalmodal dialoh-->
                      </div><!--paypalmodal-->
+                     </div>
                  </div><!--Form vontainer-->
              </form>
          </div>
@@ -211,8 +214,15 @@
     
 
 
-    <script type="text/javascript">
-        $('#closemodal').modal('hide');
+    <script>
+       function myHideFunction() {
+  var x = document.getElementById("paypalCheck");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
     </script>
     <script src="jquery/dist/jquery.slim.min.js"></script>
     <script src="popper.js/dist/umd/popper.min.js"></script>

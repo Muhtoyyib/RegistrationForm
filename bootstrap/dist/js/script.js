@@ -20,11 +20,11 @@ function register(e) {
 		if(atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length){
 			msg.className = "alert alert-danger";
 			msg.innerHTML = "Please use a valid email";
-		} else{
+		} else {
 			if(password1 != password2){
 				msg.className = "alert alert-danger";
 				msg.innerHTML = "Password doesn't match";
-			} else{
+			} else {
 				msg.className = "alert alert-success";
 				msg.innerHTML = "You have successfully completed the registration";
 			}
